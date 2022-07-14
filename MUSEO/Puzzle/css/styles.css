@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+}
+
+.mapa {
+    height: 700px;
+    width: 700px;
+    border: solid;
+    position: relative;
+    vertical-align: middle;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+}
+
+#mapaEspaña {
+    max-width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+}
+
+.provincia {
+    width: 100px;
+    position: absolute;
+    /*270,340 margen de error 6px;*/
+}

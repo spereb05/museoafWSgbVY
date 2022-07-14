@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+}
+.boton-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+}
+
+.botonStyle {
+    height: 45px;
+    width: 200px;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 700;
+    background-color: #C8C6C6;
+    color: black;
+    cursor: pointer;
+    box-shadow: 1.5px 1.5px 8px -1px #4B6587;
+    margin: 30px;
+}
+
+.botonStyle:hover {
+    background-color: black;
+    color: #C8C6C6;
+    box-shadow: 1.5px 1.5px 8px -1px #C8C6C6;
+}
+
+.botonStyle:disabled {
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+label {
+    text-align: center;
+    line-height: 45px;
+}
+
+#file-left,
+#file-right {
+    display: none;
+}
+
+.portraitImage {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+}
+
+#weddingPortrait {
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 700px;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+}
+/**
+ * PORTRAIT
+ */
+
+.fill-portrait {
+    height: 200px;
+    width: fit-content;
+    position: absolute;
+    top: 205px;
+    left: 130px;
+    overflow: hidden;
+    resize: both;
+    /*padding-top: calc(100% / 4);*/
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+}
+
+.fill-portrait-header {
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    cursor: move;
+    z-index: 10;
+    color: #fff;
+    position: absolute;
+    cursor: all-scroll;
+}
+
+/**
+ * LEFT PORTRAIT
+ */
+
+#fill-portrait-left {
+    top: 190px;
+    left: 200px;
+}
+
+#portrait-left {
+    width: inherit;
+    height: 100%;
+}
+
+/**
+ * RIGHT PORTRAIT
+ */
+
+#fill-portrait-right {
+    top: 165px;
+    left: 390px;
+}
+
+#portrait-right {
+    width: inherit;
+    height: 100%;
+}
