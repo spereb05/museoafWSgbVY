@@ -13,6 +13,7 @@ btnShowHide.addEventListener("click", () => {
     }
 });
 
+const fillPortraitLeft = document.getElementById('fill-portrait-left');
 const btnPortLeft = document.getElementById("file-left");
 const portraitLeft = document.getElementById('portrait-left');
 btnPortLeft.addEventListener('change', function () {
@@ -22,16 +23,14 @@ btnPortLeft.addEventListener('change', function () {
         const reader = new FileReader();
         reader.addEventListener('load', function () {
             portraitLeft.setAttribute('src', reader.result);
+            fillPortraitLeft.style = "height: 200px; width: fit-content;";
         });
         reader.readAsDataURL(newProtrait);
     }
-    var currentH = child.clientHeight;
-    var currentW = child.clientWidth;
-
-    const initH = currentH;
-    const initW = currentW;
+    j = 0;
 });
 
+const fillPortraitRight = document.getElementById('fill-portrait-right');
 const btnPortRight = document.getElementById("file-right");
 const portraitRight = document.getElementById('portrait-right');
 btnPortRight.addEventListener('change', function () {
@@ -41,16 +40,65 @@ btnPortRight.addEventListener('change', function () {
         const reader = new FileReader();
         reader.addEventListener('load', function () {
             portraitRight.setAttribute('src', reader.result);
+            fillPortraitRight.style = "height: 200px; width: fit-content";
         });
         reader.readAsDataURL(newProtrait);
     }
-
-    currentH = child.clientHeight;
-    currentW = child.clientWidth;
-
-    initH = currentH;
-    initW = currentW;
+    i = 0;
 });
+
+/* inicializo los datos de los tamaños originales*/
+function setVariablesL(currentH, currentW) {
+    initHL = currentH;
+    initWL = currentW;
+}
+
+function setVariablesR(currentH, currentW) {
+    initHR = currentH;
+    initWR = currentW;
+}
+
+/* observadores de ambas imagenes al cambiar de tamaño*/
+let observerL = new ResizeObserver(function (mutations) {
+    currentHL = childL.clientHeight;
+    currentWL = childL.clientWidth;
+    if(j==0) {
+        setVariablesL(currentHL, currentWL);
+        j+= 1;
+    }
+    var proporcion = (currentHL*initWL)/initHL;
+    portraitLeft.style = "height: "+ currentHL +"px; width: fit-content;";
+});
+
+let observerR = new ResizeObserver(function (mutations) {
+    currentHR = childR.clientHeight;
+    currentWR = childR.clientWidth;
+    if(i==0) {
+        setVariablesR(currentHR, currentWR);
+        i+= 1;
+    }
+    var proporcion = (currentHR*initWR)/initHR;
+    portraitRight.style = "height: "+ currentHR +"px; width: fit-content;";
+});
+
+let childR = document.querySelector('#fill-portrait-right');
+observerR.observe(childR, { attributes: true });
+let childL = document.querySelector('#fill-portrait-left');
+observerL.observe(childL, { attributes: true });
+
+/*Datos actuales e iniciales de la altura y ancho de las imagenes*/
+var currentHL = childL.clientHeight;
+var currentWL = childL.clientWidth;
+var initHL = currentHL;
+var initWL = currentWL;
+
+var currentHR = childR.clientHeight;
+var currentWR = childR.clientWidth;
+var initHR = currentHR;
+var initWR = currentWR;
+
+var i = 0;
+var j = 0;
 
 /**
  * Drag
@@ -137,18 +185,3 @@ function initDragElement() {
     }
 }
 
-let observer = new ResizeObserver(function (mutations) {
-    
-    currentH = child.clientHeight;
-    currentW = child.clientWidth;
-    console.log('h:' + initH , ' || w: '+ initW + '\nnH: ' + currentH + 'nH: ' + currentW);
-});
-
-let child = document.querySelector('#fill-portrait-right');
-observer.observe(child, { attributes: true });
-
-var currentH = child.clientHeight;
-var currentW = child.clientWidth;
-
-const initH = currentH;
-const initW = currentW;
