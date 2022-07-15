@@ -57,10 +57,6 @@ body {
 
 #frontal1 h2 {
     font-size: 30px;
-    color: white;
-    text-align: end;
-    -webkit-transform: translate(-50%);
-    transform: translate(-50%);
 }
 
 .panel {

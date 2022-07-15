@@ -121,6 +121,7 @@ function initDragElement() {
             elmnt.style.top = imageDrag[0] + "px";
             elmnt.style.left = imageDrag[1] + "px";
             elmnt.style.transform = 'rotate(0deg)';
+            elmnt.style.zIndex = 90;
         } else {
             relocate(imageDrag);
         }

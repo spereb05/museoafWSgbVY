@@ -9,30 +9,71 @@ body {
     width: 100%;
 }
 
+.contenedor {
+    position: fixed;
+    top: 50%;
+    right: 50%;
+    display: flex;
+    grid-template-columns: 1fr 1fr 1fr;
+    -webkit-transform: translate(50%, -50%);
+    transform: translate(50%, -50%);
+    justify-content: space-between;
+}
+
 .mapa {
-    height: 700px;
-    width: 700px;
+    background-color: rgb(175, 25, 25);
     border: solid;
+    border-color: rgb(175, 25, 25);
+    border-right-color: rgb(218, 88, 88);
+    border-top-color: rgb(218, 88, 88);
+    border-radius: 7px;
+    height: 800px;
+    width: fit-content;
+    margin: 10px;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+    align-self: end;
+}
+
+#titulo{
+    font-size: small;
+    color: white;
+    text-align: end;
+    margin-top: 15px;
+    margin-right: 60px;
+}
+
+.panel {
+    margin: 20px 60px;
+    height: 650px;
+}
+
+#mapa-politico {
+    height: 100%;
+}
+
+.carrousel {
+    width: 500px;
+    height: 800px;
+    margin-top: 10px;
+
+    overflow: scroll;
+    overflow-x: hidden;
     position: relative;
-    vertical-align: middle;
-    user-select: none;
-    -webkit-user-select: none;
-    -webkit-user-drag: none;
+    scroll-snap-type: y mandatory;
 }
 
-#mapaEspaña {
-    max-width: 100%;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    user-select: none;
-    -webkit-user-select: none;
-    -webkit-user-drag: none;
-}
-
-.provincia {
-    width: 100px;
-    position: absolute;
-    /*270,340 margen de error 6px;*/
-}
+.element {
+    width: 300px;
+    height: 300px;
+    scroll-margin: 10px;
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 200px;
+    margin-top: 200px;
+  }
