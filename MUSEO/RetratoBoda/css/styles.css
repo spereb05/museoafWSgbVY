@@ -72,9 +72,9 @@ label {
     -webkit-user-drag: none;
 }
 /**
- * PORTRAIT
+ * DRAGGEABLE
  */
-.fill-portrait{
+.draggeable{
     height: 200px;
     min-height: 100px;
     width: fit-content;
@@ -90,7 +90,7 @@ label {
     -webkit-user-drag: none;
 }
 
-.fill-portrait-header {
+.draggeable-header {
     height: 100%;
     width: 100%;
     padding: 10px;
@@ -102,29 +102,29 @@ label {
 }
 
 /**
- * LEFT PORTRAIT
+ * LEFT IMAGE
  */
 
-#fill-portrait-left {
+#draggeable-image-left {
     top: 190px;
     left: 200px;
 }
 
-#portrait-left {
+#image-left {
     width: inherit;
     height: 100%;
 }
 
 /**
- * RIGHT PORTRAIT
+ * RIGHT IMAGE
  */
 
-#fill-portrait-right {
+#draggeable-image-right {
     top: 165px;
     left: 390px;
 }
 
-#portrait-right {
+#image-right {
     width: inherit;
     height: 100%;
 }
