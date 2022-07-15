@@ -47,37 +47,22 @@ btnPortRight.addEventListener('change', function () {
     i = 0;
 });
 
-/* inicializo los datos de los tamaños originales*/
-function setVariablesL(currentH, currentW) {
-    initHL = currentH;
-    initWL = currentW;
-}
-
-function setVariablesR(currentH, currentW) {
-    initHR = currentH;
-    initWR = currentW;
-}
-
 /* observadores de ambas imagenes al cambiar de tamaño*/
 let observerL = new ResizeObserver(function (mutations) {
-    currentHL = childL.clientHeight;
-    currentWL = childL.clientWidth;
+    //currentHL = childL.clientHeight;
     if(j==0) {
         setVariablesL(currentHL, currentWL);
         j+= 1;
     }
-    var proporcion = (currentHL*initWL)/initHL;
     portraitLeft.style = "height: "+ currentHL +"px; width: fit-content;";
 });
 
 let observerR = new ResizeObserver(function (mutations) {
-    currentHR = childR.clientHeight;
-    currentWR = childR.clientWidth;
+    //currentHR = childR.clientHeight;
     if(i==0) {
         setVariablesR(currentHR, currentWR);
         i+= 1;
     }
-    var proporcion = (currentHR*initWR)/initHR;
     portraitRight.style = "height: "+ currentHR +"px; width: fit-content;";
 });
 
@@ -87,15 +72,8 @@ let childL = document.querySelector('#fill-portrait-left');
 observerL.observe(childL, { attributes: true });
 
 /*Datos actuales e iniciales de la altura y ancho de las imagenes*/
-var currentHL = childL.clientHeight;
-var currentWL = childL.clientWidth;
-var initHL = currentHL;
-var initWL = currentWL;
-
-var currentHR = childR.clientHeight;
-var currentWR = childR.clientWidth;
-var initHR = currentHR;
-var initWR = currentWR;
+//var currentHL = childL.clientHeight;
+//var currentHR = childR.clientHeight;
 
 var i = 0;
 var j = 0;
