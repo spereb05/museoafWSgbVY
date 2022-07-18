@@ -18,6 +18,8 @@ body {
     -webkit-transform: translate(50%, -50%);
     transform: translate(50%, -50%);
     justify-content: space-between;
+    overflow: scroll;
+    overflow-x: hidden;
 }
 
 .mapa {
@@ -29,14 +31,16 @@ body {
     border-radius: 7px;
     height: 800px;
     width: fit-content;
-    margin: 10px;
     user-select: none;
     -webkit-user-select: none;
     -webkit-user-drag: none;
     align-self: end;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
 }
 
-#titulo{
+#titulo {
     font-size: small;
     color: white;
     text-align: end;
@@ -54,26 +58,23 @@ body {
 }
 
 .carrousel {
-    width: 500px;
+    width: 400px;
     height: 800px;
-    margin-top: 10px;
+    margin-left: 40px;
+}
 
-    overflow: scroll;
-    overflow-x: hidden;
-    position: relative;
-    scroll-snap-type: y mandatory;
+.item-draggeable {
+    display: flex;
+    height: fit-content;
+    overflow:  hidden;
+    height: 400px;
+    
 }
 
 .element {
-    width: 300px;
-    height: 300px;
-    scroll-margin: 10px;
-    scroll-snap-align: start;
-    scroll-snap-stop: normal;
-    font-size: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 200px;
-    margin-top: 200px;
-  }
+    height: fit-content;
+    max-height: 400px;
+    width: fit-content;
+    max-width: 400px;
+    position: fixed;
+}
