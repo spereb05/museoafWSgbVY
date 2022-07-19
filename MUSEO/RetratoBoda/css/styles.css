@@ -94,11 +94,31 @@ label {
     height: 100%;
     width: 100%;
     padding: 10px;
-    cursor: move;
     z-index: 10;
     color: #fff;
     position: absolute;
     cursor: all-scroll;
+}
+
+.input-image {
+    height: 50%;
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 50;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.514);
+    position: absolute;
+    display: none;
+}
+
+.input-image label {
+    height: 100%;
+    transform: translateY(50%);
+    font-weight: bold;
+    font-size: large;
+    padding: 10% 0;
+    cursor: pointer;
 }
 
 /**

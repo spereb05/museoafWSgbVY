@@ -1,24 +1,85 @@
 var margenError = 50;
 var pTop = 0, pLeft = 0;
 var takenTop = false;
-    takenDown = false;
+takenDown = false;
 
 /**
- * Drag
+ * 
+ * MOSTRAR BOTON CAMBIO DE IMAGEN
+ * 
+ */
+const drag = document.getElementById('draggeable-image-portrait');
+const button = document.getElementById('input-image');
+drag.addEventListener('mouseenter', function () {
+    button.style.display = "block";
+});
+
+drag.addEventListener('mouseleave', function () {
+    button.style.display = "none";
+});
+
+
+/**
+ * 
+ * CAMBIAR IMAGEN
+ * 
+ */
+const imageP = document.getElementById('image-portrait');
+const btnImage = document.getElementById("file");
+btnImage.addEventListener('change', function () {
+    const newProtrait = this.files[0];
+
+    if (newProtrait) {
+        const reader = new FileReader();
+        reader.addEventListener('load', function () {
+            imageP.setAttribute('src', reader.result);
+            drag.style = "height: 200px; width: fit-content";
+        });
+        reader.readAsDataURL(newProtrait);
+    }
+});
+
+/**
+ * 
+ * REDIMENSIONAR
+ * 
+ */
+const imagePortrait = document.getElementById('image-portrait');
+/* observadores del retrato al cambiar de tamaño*/
+let observer = new ResizeObserver(function (mutations) {
+    currentH = child.clientHeight;
+    imagePortrait.style = "height: " + currentH + "px; width: fit-content;";
+});
+
+let child = document.querySelector('#draggeable-image-portrait');
+observer.observe(child, { attributes: false });
+
+/*Datos actuales e iniciales de la altura y ancho de las imagenes*/
+var currentH = child.clientHeight;
+
+/**
+ * 
+ * DRAG
+ * 
  */
 window.onload = function () {
     initDragElement();
 };
 
 // provincia = [targetTop, targetLeft, id, origenTop, origenLeft, zindex, rotation, posicion, estado]
-var image1 = [85, 595, 'draggeable-image-1', 420, 95, -1, 10, 'top', false];
-var image2 = [85, 595, 'draggeable-image-2', 310, 60, -4, -10, 'top', false];
-var image3 = [85, 595, 'draggeable-image-3', 185, 65, -7, 5, 'top', false];
-var image4 = [430, 595, 'draggeable-image-4', 420, 1095, -1, 10, 'down', false];
-var image5 = [430, 595, 'draggeable-image-5', 310, 1150, -4, -10, 'down', false];
-var image6 = [430, 595, 'draggeable-image-6', 185, 1090, -7, 5, 'down', false];
+var image1 = [85, 595, 'draggeable-image-1', 440, 95, -1, 10, 'top', false];
+var image2 = [85, 595, 'draggeable-image-2', 330, 60, -4, -10, 'top', false];
+var image3 = [85, 595, 'draggeable-image-3', 215, 65, -7, 5, 'top', false];
+var image4 = [85, 595, 'draggeable-image-4', 95, 110, -10, -7, 'top', false];
+var image5 = [85, 595, 'draggeable-image-5', 0, 45, -13, 0, 'top', false];
+var image6 = [430, 595, 'draggeable-image-6', 440, 1095, -1, 10, 'down', false];
+var image7 = [430, 595, 'draggeable-image-7', 330, 1150, -4, -10, 'down', false];
+var image8 = [430, 595, 'draggeable-image-8', 215, 1090, -7, 5, 'down', false];
+var image9 = [430, 595, 'draggeable-image-9', 95, 1145, -10, -7, 'down', false];
+var image10 = [430, 595, 'draggeable-image-10', 0, 1090, -13, 0, 'down', false];
+var image11 = [null, null, 'draggeable-image-portrait', null, null, null, null, '', null];
 
-var arrayImages = [image1, image2, image3, image4, image5, image6];
+var arrayImages = [image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11];
 
 function initDragElement() {
     var pos1 = 0,
@@ -81,12 +142,16 @@ function initDragElement() {
             case image1[2]:
             case image2[2]:
             case image3[2]:
+            case image4[2]:
+            case image5[2]:
                 document.getElementById("columna-cajon2").style.zIndex = -100;
                 elmnt.style.zIndex = 100;
                 break;
-            case image4[2]:
-            case image5[2]:
             case image6[2]:
+            case image7[2]:
+            case image8[2]:
+            case image9[2]:
+            case image10[2]:
                 document.getElementById("columna-cajon1").style.zIndex = -100;
                 elmnt.style.zIndex = 100;
                 break;
@@ -106,15 +171,15 @@ function initDragElement() {
         }
 
 
-        if (imageDrag[7] == 'top' && takenTop){
+        if (imageDrag[7] == 'top' && takenTop) {
             relocate(imageDrag);
         } else if (imageDrag[7] == 'down' && takenDown) {
             relocate(imageDrag);
-        } else if (pTop >= imageDrag[0] - margenError && pTop <= imageDrag[0] + margenError && pLeft >= imageDrag[1] - margenError && pLeft <= imageDrag[1] + margenError){
+        } else if (pTop >= imageDrag[0] - margenError && pTop <= imageDrag[0] + margenError && pLeft >= imageDrag[1] - margenError && pLeft <= imageDrag[1] + margenError) {
             if (imageDrag[7] == 'top') {
                 takenTop = true;
                 imageDrag[8] = true;
-            } else{
+            } else {
                 takenDown = true;
                 imageDrag[8] = true;
             }
@@ -134,12 +199,12 @@ function initDragElement() {
         elmnt.style.top = imageDrag[3] + "px";
         elmnt.style.left = imageDrag[4] + "px";
         elmnt.style.zIndex = imageDrag[5];
-        elmnt.style.transform = 'rotate('+imageDrag[6]+'deg)';
+        elmnt.style.transform = 'rotate(' + imageDrag[6] + 'deg)';
 
         if (imageDrag[7] == 'top' && imageDrag[8]) {
             takenTop = false;
             imageDrag[8] = false;
-        } else if (imageDrag[7] == 'down' && imageDrag[8]){
+        } else if (imageDrag[7] == 'down' && imageDrag[8]) {
             takenDown = false;
             imageDrag[8] = false;
         }

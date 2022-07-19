@@ -13,25 +13,39 @@ btnShowHide.addEventListener("click", () => {
     }
 });
 
-const dragImageLeft = document.getElementById('draggeable-image-left');
-const btnFileLeft = document.getElementById("file-left");
-const imageLeft = document.getElementById('image-left');
-btnFileLeft.addEventListener('change', function () {
-    const newProtrait = this.files[0];
-
-    if (newProtrait) {
-        const reader = new FileReader();
-        reader.addEventListener('load', function () {
-            imageLeft.setAttribute('src', reader.result);
-            dragImageLeft.style = "height: 200px; width: fit-content;";
-        });
-        reader.readAsDataURL(newProtrait);
-    }
+/**
+ * 
+ * MOSTRAR BOTON CAMBIO DE IMAGEN
+ * 
+ */
+const dragR = document.getElementById('draggeable-image-right');
+const buttonR = document.getElementById('input-image-right');
+dragR.addEventListener('mouseenter', function () {
+    buttonR.style.display = "block";
 });
 
-const dragImageRight = document.getElementById('draggeable-image-right');
-const btnImageRight = document.getElementById("file-right");
+dragR.addEventListener('mouseleave', function () {
+    buttonR.style.display = "none";
+});
+
+const dragL = document.getElementById('draggeable-image-left');
+const buttonL = document.getElementById('input-image-left');
+dragL.addEventListener('mouseenter', function () {
+    buttonL.style.display = "block";
+});
+
+dragL.addEventListener('mouseleave', function () {
+    buttonL.style.display = "none";
+});
+
+
+/**
+ * 
+ * CAMBIAR IMAGEN
+ * 
+ */
 const imageRight = document.getElementById('image-right');
+const btnImageRight = document.getElementById("file-right");
 btnImageRight.addEventListener('change', function () {
     const newProtrait = this.files[0];
 
@@ -39,21 +53,41 @@ btnImageRight.addEventListener('change', function () {
         const reader = new FileReader();
         reader.addEventListener('load', function () {
             imageRight.setAttribute('src', reader.result);
-            dragImageRight.style = "height: 200px; width: fit-content";
+            dragR.style = "height: 200px; width: fit-content";
         });
         reader.readAsDataURL(newProtrait);
     }
 });
 
-/* observadores de ambas imagenes al cambiar de tamaño*/
+const imageLeft = document.getElementById('image-left');
+const btnImageLeft = document.getElementById("file-left");
+btnImageLeft.addEventListener('change', function () {
+    const newProtrait = this.files[0];
+
+    if (newProtrait) {
+        const reader = new FileReader();
+        reader.addEventListener('load', function () {
+            imageLeft.setAttribute('src', reader.result);
+            dragL.style = "height: 200px; width: fit-content";
+        });
+        reader.readAsDataURL(newProtrait);
+    }
+});
+
+
+/**
+ * 
+ * REDIMENSIONAR
+ * 
+ */
 let observerL = new ResizeObserver(function (mutations) {
     currentHL = childL.clientHeight;
-    imageLeft.style = "height: "+ currentHL +"px; width: fit-content;";
+    imageLeft.style = "height: " + currentHL + "px; width: fit-content;";
 });
 
 let observerR = new ResizeObserver(function (mutations) {
     currentHR = childR.clientHeight;
-    imageRight.style = "height: "+ currentHR +"px; width: fit-content;";
+    imageRight.style = "height: " + currentHR + "px; width: fit-content;";
 });
 
 let childR = document.querySelector('#draggeable-image-right');

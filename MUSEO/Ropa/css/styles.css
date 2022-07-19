@@ -41,12 +41,12 @@ body {
 
 #columna-cajon1,
 #columna-cajon2 {
-    height: 600px;
     border: none;
     z-index: -30;
 }
 
-#titulo, #frontal1 h2 {
+#titulo,
+#frontal1 h2 {
     font-size: small;
     color: white;
     text-align: end;
@@ -72,9 +72,9 @@ body {
 
 .percha-izquierda,
 .percha-derecha {
-    width: 15px;
-    height: 15px;
-    margin: 20px;
+    width: 8px;
+    height: 8px;
+    margin: 12px;
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     border-radius: 50%;
@@ -85,9 +85,6 @@ body {
 .panel-superior,
 .panel-inferior {
     height: 340px;
-    border: solid;
-    border-color: #7a8085;
-    border-radius: 7px;
 }
 
 .cajon {
@@ -106,46 +103,6 @@ body {
     margin-bottom: 10px;
 }
 
-/**
- * PARED 4
- */
-
-#cajon3 {
-    z-index: -8;
-}
-
-/**
- * PARED 3
- */
-
-#frontal3 {
-    height: 490px;
-    bottom: 0;
-    z-index: -6;
-}
-
-#cajon2 {
-    bottom: 380px;
-    z-index: -5;
-}
-
-/**
- * PARED 2
- */
-#frontal2 {
-    height: 380px;
-    bottom: 0;
-    z-index: -3;
-}
-
-#cajon1 {
-    bottom: 270px;
-    z-index: -2;
-}
-
-/**
- * PARED 1
- */
 .frontal {
     width: calc(33.333% - 20px);
     border: solid;
@@ -157,11 +114,82 @@ body {
     margin-bottom: 10px;
 }
 
+/**
+ * PARED 1
+ */
+
 #frontal1 {
-    height: 270px;
+    height: 250px;
     bottom: 0;
     z-index: 0;
 }
+
+/**
+ * PARED 2
+ */
+#cajon1 {
+    bottom: 250px;
+    z-index: -2;
+}
+
+#frontal2 {
+    height: 360px;
+    bottom: 0;
+    z-index: -3;
+}
+
+/**
+ * PARED 3
+ */
+#cajon2 {
+    bottom: 360px;
+    z-index: -5;
+}
+
+#frontal3 {
+    height: 470px;
+    bottom: 0;
+    z-index: -6;
+}
+
+
+/**
+ * PARED 4
+ */
+#cajon3 {
+    bottom: 470px;
+    z-index: -8;
+}
+
+#frontal4 {
+    height: 580px;
+    bottom: 0;
+    z-index: -9;
+}
+
+/**
+ * PARED 5
+ */
+#cajon4 {
+    bottom: 580px;
+    z-index: -11;
+}
+
+#frontal5 {
+    height: 690px;
+    bottom: 0;
+    z-index: -12;
+}
+
+/**
+ * PARED 6
+ */
+ #cajon5 {
+    z-index: -14;
+}
+
+
+
 
 
 /**
@@ -180,7 +208,6 @@ body {
     height: 100%;
     width: 100%;
     padding: 10px;
-    cursor: move;
     z-index: 10;
     color: #fff;
     position: absolute;
@@ -188,32 +215,52 @@ body {
 }
 
 #draggeable-image-1 {
-    top: 420px;
+    top: 440px;
     left: 95px;
 }
 
 #draggeable-image-2 {
-    top: 310px;
+    top: 330px;
     left: 60px;
 }
 
 #draggeable-image-3 {
-    top: 185px;
+    top: 215px;
     left: 65px;
 }
 
 #draggeable-image-4 {
-    top: 420px;
-    left: 1095px;
+    top: 95px;
+    left: 110px;
 }
 
 #draggeable-image-5 {
-    top: 310px;
-    left: 1150px;
+    top: 0px;
+    left: 45px;
 }
 
 #draggeable-image-6 {
-    top: 185px;
+    top: 440px;
+    left: 1095px;
+}
+
+#draggeable-image-7 {
+    top: 330px;
+    left: 1150px;
+}
+
+#draggeable-image-8 {
+    top: 215px;
+    left: 1090px;
+}
+
+#draggeable-image-9 {
+    top: 95px;
+    left: 1145px;
+}
+
+#draggeable-image-10 {
+    top: 0px;
     left: 1090px;
 }
 
@@ -222,7 +269,11 @@ body {
 #image-3,
 #image-4,
 #image-5,
-#image-6 {
+#image-6,
+#image-7,
+#image-8,
+#image-9,
+#image-10 {
     width: inherit;
     height: 100%;
 }
@@ -230,21 +281,84 @@ body {
 /**
  * INDEX IMAGENES
  */
+#draggeable-image-5,
+#draggeable-image-10 {
+    transform: rotate(0deg);
+    z-index: -13;
+}
+
+#draggeable-image-4,
+#draggeable-image-9 {
+    transform: rotate(-7deg);
+    z-index: -10;
+}
 
 #draggeable-image-3,
-#draggeable-image-6 {
+#draggeable-image-8 {
     transform: rotate(5deg);
     z-index: -7;
 }
 
 #draggeable-image-2,
-#draggeable-image-5 {
+#draggeable-image-7 {
     transform: rotate(-10deg);
     z-index: -4;
 }
 
 #draggeable-image-1,
-#draggeable-image-4 {
+#draggeable-image-6 {
     transform: rotate(10deg);
     z-index: -1;
+}
+
+/**
+ * DRAGGEABLE PORTRAIT
+ */
+
+#draggeable-image-portrait {
+    height: 200px;
+    min-height: 100px;
+    width: fit-content;
+    min-width: min-content;
+    max-width: fit-content;
+    position: fixed;
+    overflow: hidden;
+    resize: both;
+
+    text-align: center;
+    top: 200px;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 100;
+}
+
+.input-image {
+    height: 50%;
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 50;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.514);
+    position: absolute;
+    display: none;
+}
+
+.input-image label {
+    height: 100%;
+    transform: translateY(50%);
+    font-weight: bold;
+    font-size: large;
+    padding: 10% 0;
+    cursor: pointer;
+}
+
+#image-portrait {
+    width: inherit;
+    height: 100%;
+}
+
+#file {
+    display: none;
 }

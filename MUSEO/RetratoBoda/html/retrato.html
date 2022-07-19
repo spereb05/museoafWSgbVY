@@ -12,20 +12,24 @@
 <body>
     <div class="portraitImage" id="portraitImage">
         <div class="boton-div">
-            <input type="file" id="file-left">
-            <label for="file-left" class="botonStyle" id="btn-port-left" >Imagen izda</label>
             <button class="botonStyle" id="btn-show-hide">Ocultar imagenes</button>
-            <input type="file" id="file-right">
-            <label for="file-right" class="botonStyle" id="btn-port-right" >Imagen dcha</label>
         </div>
         <img src="../images/CASATE-CONMIGO.png" id="weddingPortrait" alt="Wedding portrait">
 
         <div class="draggeable" id="draggeable-image-left">
             <div class="draggeable-header"></div>
+            <div class="input-image" id="input-image-left">
+                <input type="file" id="file-left">
+                <label for="file-left">Cambiar imagen</label>
+            </div>
             <img src="../images/face.png" id="image-left" alt="Imagen draggeable izquierda">
         </div>
         <div class="draggeable" id="draggeable-image-right">
             <div class="draggeable-header"></div>
+            <div class="input-image" id="input-image-right">
+                <input type="file" id="file-right">
+                <label for="file-right">Cambiar imagen</label>
+            </div>
             <img src="../images/face.png" id="image-right" alt="Imagen draggeable derecha">
         </div>
     </div>

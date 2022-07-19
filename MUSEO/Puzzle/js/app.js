@@ -73,10 +73,6 @@ function loadImages() {
     }
 }
 
-
-
-
-
 function dragElement(elmnt) {
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
 
@@ -110,6 +106,10 @@ function dragElement(elmnt) {
         pos2 = pos4 - e.clientY;
         pos3 = e.clientX;
         pos4 = e.clientY;
+        
+        elmnt[2].style.width = elmnt[5] + "px";
+        elmnt[2].style.zIndex = "100";
+        elmnt[2].style.transform = "rotate(" + elmnt[6] + "deg)";
 
         pTop = elmnt[2].offsetTop - pos2;
         pLeft = elmnt[2].offsetLeft - pos1;
@@ -117,9 +117,6 @@ function dragElement(elmnt) {
         elmnt[2].style.left = (elmnt[2].offsetLeft - pos1) + "px";
 
         
-        elmnt[2].style.width = elmnt[5] + "px";
-        elmnt[2].style.zIndex = "100";
-        elmnt[2].style.transform = "rotate(" + elmnt[6] + "deg)";
     }
 
     /**
