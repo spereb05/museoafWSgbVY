@@ -18,8 +18,6 @@ body {
     -webkit-transform: translate(50%, -50%);
     transform: translate(50%, -50%);
     justify-content: space-between;
-    overflow: scroll;
-    overflow-x: hidden;
 }
 
 .mapa {
@@ -35,9 +33,6 @@ body {
     -webkit-user-select: none;
     -webkit-user-drag: none;
     align-self: end;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
 }
 
 #titulo {
@@ -51,16 +46,25 @@ body {
 .panel {
     margin: 20px 60px;
     height: 650px;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
 }
 
 #mapa-politico {
     height: 100%;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
 }
 
 .carrousel {
     width: 400px;
     height: 800px;
     margin-left: 40px;
+
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .item-draggeable {
@@ -68,6 +72,10 @@ body {
     height: fit-content;
     overflow:  hidden;
     height: 400px;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
     
 }
 
@@ -76,5 +84,7 @@ body {
     max-height: 400px;
     width: fit-content;
     max-width: 400px;
-    position: fixed;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
 }

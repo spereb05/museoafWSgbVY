@@ -7,9 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ropa</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
+    <!--<button onclick="doCapture();">Capture</button>
+    <script>
+        function doCapture() {
+            window.scroll(0,0);
+            html2canvas(document.getElementById("columna-cajon1")).then(function (canvas){
+                console.log(canvas.toDataURL("image/jpeg", 1.0));
+            });
+        }
+    </script>-->
     <div class="contenedor" id="contenedor">
         <div class="columna" id="columna-cajon1">
             <div class="draggeable" id="draggeable-image-1">

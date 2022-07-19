@@ -102,6 +102,9 @@ function dragElement(elmnt) {
         e = e || window.event;
         e.preventDefault();
 
+        elmnt[2].style.position = "fixed";
+
+
         pos1 = pos3 - e.clientX;
         pos2 = pos4 - e.clientY;
         pos3 = e.clientX;
@@ -113,9 +116,9 @@ function dragElement(elmnt) {
 
         pTop = elmnt[2].offsetTop - pos2;
         pLeft = elmnt[2].offsetLeft - pos1;
-        elmnt[2].style.top = (elmnt[2].offsetTop - pos2) + "px";
-        elmnt[2].style.left = (elmnt[2].offsetLeft - pos1) + "px";
 
+        elmnt[2].style.top = (e.clientY)-175 + "px";
+        elmnt[2].style.left = (e.clientX)-300 + "px";
         
     }
 
@@ -124,7 +127,6 @@ function dragElement(elmnt) {
      * En caso contrario la instancia vuelve a su posicion original
      */
     function closeDragElement() {
-        //$(elmnt[5]).remove();
         if (pTop >= elmnt[0] - margenError && pTop <= elmnt[0] + margenError && pLeft >= elmnt[1] - margenError && pLeft <= elmnt[1] + margenError) {
             var srcAntiguo = elmnt[2].src;
             $(elmnt[7]).remove();
@@ -135,6 +137,7 @@ function dragElement(elmnt) {
             $("#contenedor").append(img);
         } else {
             elmnt[2].style = "";
+            elmnt[2].style.position = "";
         }
 
         /* stop moving when mouse button is released:*/
