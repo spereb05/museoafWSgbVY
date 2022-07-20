@@ -146,27 +146,27 @@ p {
 #nombre-titular {
     position: fixed;
     left: 225px;
-    top: 187px;
+    top: 185px;
 }
 
 #acompanado-esposa {
     width: 180px;
     position: fixed;
     left: 280px;
-    top: 213px;
+    top: 211px;
 }
 
 #nombre-esposa {
     display: none;
     position: fixed;
     left: 225px;
-    top: 241px;
+    top: 239px;
 }
 
 #fecha-expedicion {
     position: fixed;
     left: 250px;
-    top: 266px;
+    top: 264px;
     font-weight: bold;
 }
 
@@ -174,35 +174,35 @@ p {
     width: 250px;
     position: fixed;
     left: 210px;
-    top: 294px;
+    top: 292px;
 }
 
 #profesion {
     width: 250px;
     position: fixed;
     left: 210px;
-    top: 320px;
+    top: 318px;
 }
 
 #estado-civil {
     width: 250px;
     position: fixed;
     left: 210px;
-    top: 347px;
+    top: 345px;
 }
 
 #fecha-nacimiento {
     width: 120px;
     position: fixed;
     left: 214px;
-    top: 373px;
+    top: 371px;
 }
 
 #lugar-nacimiento {
     width: 250px;
     position: fixed;
     left: 210px;
-    top: 412px;
+    top: 410px;
     overflow: scroll;
 }
 
@@ -210,44 +210,44 @@ p {
     width: 250px;
     position: fixed;
     left: 210px;
-    top: 435px;
+    top: 433px;
     overflow: scroll;
 }
 
 #nombre-hijo-1 {
     position: fixed;
     left: 130px;
-    top: 643px;
+    top: 641px;
 }
 
 #nombre-hijo-2 {
     position: fixed;
     left: 130px;
-    top: 668px;
+    top: 666px;
 }
 
 #edad-hijo-1 {
     position: fixed;
     left: 285px;
-    top: 643px;
+    top: 641px;
 }
 
 #edad-hijo-2 {
     position: fixed;
     left: 285px;
-    top: 668px;
+    top: 666px;
 }
 
 #sexo-hijo-1 {
     position: fixed;
     left: 370px;
-    top: 643px;
+    top: 641px;
 }
 
 #sexo-hijo-2 {
     position: fixed;
     left: 370px;
-    top: 668px;
+    top: 666px;
 }
 
 /**
@@ -321,8 +321,8 @@ label {
  */
 
 #draggeable-image-left {
-    top: 190px;
-    left: 200px;
+    top: 160px;
+    left: 510px;
 }
 
 #image-left {
@@ -335,8 +335,8 @@ label {
  */
 
 #draggeable-image-right {
-    top: 165px;
-    left: 390px;
+    top: 160px;
+    left: 695px;
 }
 
 #image-right {
