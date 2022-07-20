@@ -5,35 +5,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BARCO</title>
-    <link rel="stylesheet" href="../css/styles.css">
+    <title>¡TODOS A BORDO!</title>
+    <link rel="stylesheet" href="../css/styles.css">    
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
 </head>
 
 <body>
-    <div class="passengersImage" id="passengersImage">
-        <div class="boton-div">
-            <button class="botonStyle" id="btn-show-hide">Ocultar imagenes</button>
+    <div class="contenedor" id="contenedor">
+        
+        <div class="barco" id="barco">
+            <img src="../images/barco.png" id="imagenBarco" alt="Imagen barco">
+            <div class="draggeable" id="draggeable-image-left">
+                <div class="draggeable-header"></div>
+                <div class="input-image" id="input-image-left">
+                    <input type="file" id="file-left">
+                    <label for="file-left">Cambiar imagen</label>
+                </div>
+                <img src="../images/face.png" id="image-left" alt="Imagen draggeable izquierda">
+            </div>
+            <div class="draggeable" id="draggeable-image-right">
+                <div class="draggeable-header"></div>
+                <div class="input-image" id="input-image-right">
+                    <input type="file" id="file-right">
+                    <label for="file-right">Cambiar imagen</label>
+                </div>
+                <img src="../images/face.png" id="image-right" alt="Imagen draggeable derecha">
+            </div>
         </div>
-        <img src="../images/barco.png" id="passengersPortrait" alt="Passengers portrait">
 
-        <div class="draggeable" id="draggeable-image-left">
-            <div class="draggeable-header"></div>
-            <div class="input-image" id="input-image-left">
-                <input type="file" id="file-left">
-                <label for="file-left">Cambiar imagen</label>
+        <!-- BOTONES -->
+        <div class="botones" id="botones">
+            <div class="div-botones" id="div-botones">
+                <button class="botonStyle" id="btn-show-hide">Ocultar imagenes</button>
+                <button class="botonStyle" id="btn-descargar" >Descargar pasaporte</button>
             </div>
-            <img src="../images/face.png" id="image-left" alt="Imagen draggeable izquierda">
         </div>
-        <div class="draggeable" id="draggeable-image-right">
-            <div class="draggeable-header"></div>
-            <div class="input-image" id="input-image-right">
-                <input type="file" id="file-right">
-                <label for="file-right">Cambiar imagen</label>
-            </div>
-            <img src="../images/face.png" id="image-right" alt="Imagen draggeable derecha">
+
+        <div class="titulo" id="titulo">
+            <h2>¡Cásate conmigo!</h2>
+            <h4>Marry me!</h4>
         </div>
     </div>
-
     <script src="../js/app.js"></script>
 </body>
 

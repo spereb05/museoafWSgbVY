@@ -19,7 +19,7 @@ btnShowHide.addEventListener("click", () => {
  * 
  */
  const btnDescargar = document.getElementById("btn-descargar");
- const divDescarga = document.getElementById("barco");
+ const divDescarga = document.getElementById("retrato");
  btnDescargar.onclick = function () {
      let div = divDescarga;
      html2canvas(div).then(function (canvas) {

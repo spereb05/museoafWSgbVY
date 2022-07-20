@@ -155,8 +155,6 @@ function initDragElement() {
         elmnt.style.top = elmnt.offsetTop - pos2 + "px";
         elmnt.style.left = elmnt.offsetLeft - pos1 + "px";
 
-
-
         switch (elmnt.id) {
             case image1[2]:
             case image2[2]:
@@ -189,7 +187,6 @@ function initDragElement() {
             i++;
         }
 
-
         if (imageDrag[7] == 'top' && takenTop) {
             relocate(imageDrag);
         } else if (imageDrag[7] == 'down' && takenDown) {
@@ -220,7 +217,6 @@ function initDragElement() {
         elmnt.style.left = imageDrag[4] + "px";
         elmnt.style.zIndex = imageDrag[5];
         elmnt.style.transform = 'rotate(' + imageDrag[6] + 'deg)';
-        
 
         if (imageDrag[7] == 'top' && imageDrag[8]) {
             takenTop = false;
