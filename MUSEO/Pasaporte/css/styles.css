@@ -1,0 +1,388 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+}
+
+.contenedor {
+    background-color: rgb(175, 25, 25);
+    border: solid;
+    border-color: rgb(175, 25, 25);
+    border-right-color: rgb(218, 88, 88);
+    border-top-color: rgb(218, 88, 88);
+    border-radius: 7px;
+    height: 800px;
+    width: fit-content;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+    align-self: end;
+    
+    position: fixed;
+    top: 50%;
+    right: 50%;
+    -webkit-transform: translate(50%, -50%);
+    transform: translate(50%, -50%);
+}
+
+#titulo {
+    font-size: small;
+    color: white;
+    text-align: end;
+    margin-top: 15px;
+    margin-right: 60px;
+}
+
+.intro-video {
+    margin: 20px 60px;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+}
+
+video {
+    height: 650px;
+    width: fit-content;
+}
+
+/**
+ * BOTON
+ */
+.btn-hacer-pasaporte {
+    background-image: linear-gradient(to right, rgb(255, 180, 110), rgb(255, 102, 0));
+    color: rgb(255, 217, 0);
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.541);
+    border: none;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+
+    
+    position: fixed;
+    right: 157px;
+    top: 110px;
+    z-index: 100;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.541);
+}
+
+.btn-hacer-pasaporte:hover {
+    background-image: linear-gradient(to right, rgb(255, 102, 0), rgb(255, 180, 110));
+    padding: 25px;
+    right: 154px;
+    top: 107px;
+}
+
+/**
+ * BOTON -> Borde interior
+ */
+.btn-hacer-pasaporte:before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    border: 2px solid rgb(255, 217, 0, 0.5);
+    border-radius: 8px;
+    width: calc(100% - 13px);
+    height: calc(100% - 13px);
+}
+
+/**
+ * PASAPORTE
+ */
+.pasaporte {
+    display: flex;
+}
+
+.rellenar-pasaporte {
+    margin: 20px 60px;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+    display: none;
+}
+
+img {
+    height: 650px;
+    width: fit-content;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+}
+
+input {
+    border: none;
+    background-color: transparent;
+    font-weight: bold;
+}
+
+select {
+    border: none;
+    background-color: transparent;
+    font-weight: bold;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+}
+
+input,
+select,
+p {
+    color: rgb(73, 73, 73);
+}
+
+#nombre-titular {
+    position: fixed;
+    left: 225px;
+    top: 187px;
+}
+
+#acompanado-esposa {
+    width: 180px;
+    position: fixed;
+    left: 280px;
+    top: 213px;
+}
+
+#nombre-esposa {
+    display: none;
+    position: fixed;
+    left: 225px;
+    top: 241px;
+}
+
+#fecha-expedicion {
+    position: fixed;
+    left: 250px;
+    top: 266px;
+    font-weight: bold;
+}
+
+#nacionalidad {
+    width: 250px;
+    position: fixed;
+    left: 210px;
+    top: 294px;
+}
+
+#profesion {
+    width: 250px;
+    position: fixed;
+    left: 210px;
+    top: 320px;
+}
+
+#estado-civil {
+    width: 250px;
+    position: fixed;
+    left: 210px;
+    top: 347px;
+}
+
+#fecha-nacimiento {
+    width: 120px;
+    position: fixed;
+    left: 214px;
+    top: 373px;
+}
+
+#lugar-nacimiento {
+    width: 250px;
+    position: fixed;
+    left: 210px;
+    top: 412px;
+    overflow: scroll;
+}
+
+#domicilio {
+    width: 250px;
+    position: fixed;
+    left: 210px;
+    top: 435px;
+    overflow: scroll;
+}
+
+#nombre-hijo-1 {
+    position: fixed;
+    left: 130px;
+    top: 643px;
+}
+
+#nombre-hijo-2 {
+    position: fixed;
+    left: 130px;
+    top: 668px;
+}
+
+#edad-hijo-1 {
+    position: fixed;
+    left: 285px;
+    top: 643px;
+}
+
+#edad-hijo-2 {
+    position: fixed;
+    left: 285px;
+    top: 668px;
+}
+
+#sexo-hijo-1 {
+    position: fixed;
+    left: 370px;
+    top: 643px;
+}
+
+#sexo-hijo-2 {
+    position: fixed;
+    left: 370px;
+    top: 668px;
+}
+
+/**
+ * IMAGENES PASAPORTE
+ */
+
+label {
+    text-align: center;
+    line-height: 45px;
+}
+
+#file-left,
+#file-right {
+    display: none;
+}
+
+/**
+ * DRAGGEABLE
+ */
+.draggeable{
+    height: 200px;
+    min-height: 100px;
+    width: fit-content;
+    min-width: min-content;
+    max-width: fit-content;
+    position: absolute;
+    top: 205px;
+    left: 130px;
+    overflow: hidden;
+    resize: both;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+    
+    z-index: 100;
+}
+
+.draggeable-header {
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    z-index: 10;
+    color: #fff;
+    position: absolute;
+    cursor: all-scroll;
+}
+
+.input-image {
+    height: 50%;
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 50;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.514);
+    position: absolute;
+    display: none;
+}
+
+.input-image label {
+    height: 100%;
+    transform: translateY(50%);
+    font-weight: bold;
+    font-size: large;
+    padding: 10% 0;
+    cursor: pointer;
+}
+
+/**
+ * LEFT IMAGE
+ */
+
+#draggeable-image-left {
+    top: 190px;
+    left: 200px;
+}
+
+#image-left {
+    width: inherit;
+    height: 100%;
+}
+
+/**
+ * RIGHT IMAGE
+ */
+
+#draggeable-image-right {
+    top: 165px;
+    left: 390px;
+}
+
+#image-right {
+    width: inherit;
+    height: 100%;
+}
+
+
+/*
+ * PANEL DE BOTONES
+ */
+.botones {
+    position: relative;
+    display: flex;
+    margin-top: 20px;
+    margin-right: 60px;
+    width: 150px;
+}
+
+.div-botones {
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: none;
+    width: 150px;
+}
+
+.botonStyle {
+    display: block;
+    background-image: linear-gradient(to right, white, aqua);
+    color: black;
+    border: none;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    font-size: 16px;
+    margin: 20px 0px;
+    cursor: pointer;
+
+}
+
+.botonStyle:hover {
+    background-image: linear-gradient(to right, aqua, white);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.541);
+}

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PASAPORTE</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+    <div class="contenedor" id="contenedor">
+        <div class="titulo" id="titulo">
+            <h2>Pasaporte</h2>
+            <h4>Passport</h4>
+        </div>
+
+        <div class="intro-video" id="intro-video">
+            <video id="video" controls controlsList="nodownload">
+                <source src="../images/PASAPORTE OFICINA RECEPCION.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+            <button class="btn-hacer-pasaporte" id="btn-hacer-pasaporte">Hacer pasaporte</button>
+        </div>
+
+        <div class="pasaporte" id="pasaporte">
+            <div class="rellenar-pasaporte" id="rellenar-pasaporte">
+                <img src="../images/PASAPORTE.PNG" alt="Imagen pasaporte">
+                <div class="draggeable" id="draggeable-image-left">
+                    <div class="draggeable-header"></div>
+                    <div class="input-image" id="input-image-left">
+                        <input type="file" id="file-left">
+                        <label for="file-left">Cambiar imagen</label>
+                    </div>
+                    <img src="../images/face.png" id="image-left" alt="Imagen draggeable izquierda">
+                </div>
+                <div class="draggeable" id="draggeable-image-right">
+                    <div class="draggeable-header"></div>
+                    <div class="input-image" id="input-image-right">
+                        <input type="file" id="file-right">
+                        <label for="file-right">Cambiar imagen</label>
+                    </div>
+                    <img src="../images/face.png" id="image-right" alt="Imagen draggeable derecha">
+                </div>
+                <input type="text" id="nombre-titular" name="nombre-titular" placeholder="Introduce el texto" required>
+                <select name="acompanado-esposa" id="acompanado-esposa">
+                    <option value="elige-una-opcion">Elige una opcion</option>
+                    <option value="si">Si</option>
+                    <option value="no">No</option>
+                    <option value="no-aplica">No aplica</option>
+                </select>
+                <input type="text" id="nombre-esposa" name="nombre-esposa" placeholder="Introduce el texto...">
+                <p id="fecha-expedicion"></p>
+                <select name="nacionalidad" id="nacionalidad">
+                    <option value="elige-una-opcion">Elige una opcion</option>
+                    <option value="espanol-origen">Español de origen</option>
+                    <option value="espanola-origen">Española de origen</option>
+                </select>
+                <select name="profesion" id="profesion">
+                    <option value="elige-una-opcion">Elige una opcion</option>
+                    <option value="comerciante">Comerciante</option>
+                    <option value="estudiante">Estudiante</option>
+                    <option value="labrador">Labrador</option>
+                    <option value="minero">Minero</option>
+                    <option value="labores-hogar">Sus labores (labores del hogar)</option>
+                </select>
+                <select name="estado-civil" id="estado-civil">
+                    <option value="elige-una-opcion">Elige una opcion</option>
+                    <option value="soltero">Soltero</option>
+                    <option value="soltera">Soltera</option>
+                    <option value="casado">Casado</option>
+                    <option value="casada">Casada</option>
+                </select>
+                <input type="date" id="fecha-nacimiento" name="fecha-nacimiento" placeholder="dd/mm/aaaa" required>
+                <select name="lugar-nacimiento" id="lugar-nacimiento">
+                    <option value="elige-una-opcion">Elige una opcion</option>
+                    <option value="astorga">Astorga</option>
+                    <option value="barniedo-de-la-reina">Barniedo de la Reina</option>
+                    <option value="boñar">Boñar</option>
+                    <option value="carmenes">Cármenes</option>
+                    <option value="cerezales-del-condado">Cerezales del Condado</option>
+                    <option value="fuentes-de-caarbajal">Fuentes de Carbajal</option>
+                    <option value="garaño">Garaño</option>
+                    <option value="genicera">Genicera</option>
+                    <option value="gete">Gete</option>
+                    <option value="la-mata-de-cuerueno">La mata de Curueño</option>
+                    <option value="la-vid">La Vid</option>
+                    <option value="leon">León</option>
+                    <option value="maraña">Maraña</option>
+                    <option value="pola-de-gordon">Pola de Gordón</option>
+                    <option value="santa-maria-del-condado">Santa María del Condado</option>
+                    <option value="tabanedo">Tabanedo</option>
+                    <option value="torre-de-babia">Torre de Babia</option>
+                    <option value="vegaquemada">Vegaquemada</option>
+                    <option value="villafrea-de-la-reina">Villafrea de la Reina</option>
+                    <option value="villamanin">Villamanin</option>
+                    <option value="villar-del-puerto">Villar del Puerto</option>
+                </select>
+                <select name="domicilio" id="domicilio">
+                    <option value="elige-una-opcion">Elige una opcion</option>
+                    <option value="astorga">Astorga</option>
+                    <option value="barniedo-de-la-reina">Barniedo de la Reina</option>
+                    <option value="boñar">Boñar</option>
+                    <option value="carmenes">Cármenes</option>
+                    <option value="cerezales-del-condado">Cerezales del Condado</option>
+                    <option value="fuentes-de-caarbajal">Fuentes de Carbajal</option>
+                    <option value="garaño">Garaño</option>
+                    <option value="genicera">Genicera</option>
+                    <option value="gete">Gete</option>
+                    <option value="la-mata-de-cuerueno">La mata de Curueño</option>
+                    <option value="la-vid">La Vid</option>
+                    <option value="leon">León</option>
+                    <option value="maraña">Maraña</option>
+                    <option value="pola-de-gordon">Pola de Gordón</option>
+                    <option value="santa-maria-del-condado">Santa María del Condado</option>
+                    <option value="tabanedo">Tabanedo</option>
+                    <option value="torre-de-babia">Torre de Babia</option>
+                    <option value="vegaquemada">Vegaquemada</option>
+                    <option value="villafrea-de-la-reina">Villafrea de la Reina</option>
+                    <option value="villamanin">Villamanin</option>
+                    <option value="villar-del-puerto">Villar del Puerto</option>
+                </select>
+                <input type="text" id="nombre-hijo-1" name="nombre-hijo-1" placeholder="Introduce el texto...">
+                <select name="edad-hijo-1" id="edad-hijo-1">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                </select>
+                <select name="sexo-hijo-1" id="sexo-hijo-1">
+                    <option value="Femenino">Femenino</option>
+                    <option value="Masculino">Masculino</option>
+                </select>
+                <input type="text" id="nombre-hijo-2" name="nombre-hijo-2" placeholder="Introduce el texto...">
+                <select name="edad-hijo-1" id="edad-hijo-2">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                </select>
+                <select name="sexo-hijo-2" id="sexo-hijo-2">
+                    <option value="Femenino">Femenino</option>
+                    <option value="Masculino">Masculino</option>
+                </select>
+            </div>
+    
+            <div class="botones" id="botones">
+                <div class="div-botones" id="div-botones">
+                    <button class="botonStyle" id="btn-show-hide">Ocultar imagenes</button>
+                    <button class="botonStyle" id="btn-descargar">Descargar pasaporte</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/app.js"></script>
+</body>
+
+</html>
