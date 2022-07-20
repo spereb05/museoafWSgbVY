@@ -198,7 +198,7 @@ body {
 .draggeable {
     height: 340px;
     width: 370px;
-    position: absolute;
+    position: fixed;
     top: 205px;
     left: 130px;
     z-index: -1;
@@ -330,7 +330,7 @@ body {
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    z-index: 100;
+    z-index: 0;
 }
 
 .input-image {
@@ -361,4 +361,35 @@ body {
 
 #file {
     display: none;
+}
+
+/*
+ * PANEL DE BOTONES
+ */
+ .botones {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.botonStyle {
+    display: block;
+    background-image: linear-gradient(to right, white, aqua);
+    color: black;
+    border: none;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    font-size: 16px;
+    margin: 20px 0px;
+    cursor: pointer;
+    width: 100%;
+
+}
+
+.botonStyle:hover {
+    background-image: linear-gradient(to right, aqua, white);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.541);
 }

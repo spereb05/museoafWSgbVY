@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PASAPORTE</title>
     <link rel="stylesheet" href="../css/styles.css">
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>-->
     <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
 </head>
 
@@ -18,6 +17,7 @@
             <h4>Passport</h4>
         </div>
 
+        <!-- PANTALLA 1 -->
         <div class="intro-video" id="intro-video">
             <video id="video" controls controlsList="nodownload">
                 <source src="../images/PASAPORTE OFICINA RECEPCION.mp4" type="video/mp4">
@@ -27,9 +27,13 @@
             <button class="btn-hacer-pasaporte" id="btn-hacer-pasaporte">Hacer pasaporte</button>
         </div>
 
+        <!-- PANTALLA 2 -->
         <div class="pasaporte" id="pasaporte">
             <div class="rellenar-pasaporte" id="rellenar-pasaporte">
+                <!-- IMAGEN PASAPORTE -->
                 <img src="../images/PASAPORTE.PNG" alt="Imagen pasaporte">
+
+                <!-- FOTOS DE CARNET -->
                 <div class="draggeable" id="draggeable-image-left">
                     <div class="draggeable-header"></div>
                     <div class="input-image" id="input-image-left">
@@ -46,6 +50,8 @@
                     </div>
                     <img src="../images/face.png" id="image-right" alt="Imagen draggeable derecha">
                 </div>
+
+                <!-- INPUT DE DATOS -->
                 <input type="text" id="nombre-titular" name="nombre-titular" placeholder="Introduce el texto" required>
                 <select name="acompanado-esposa" id="acompanado-esposa">
                     <option value="elige-una-opcion">Elige una opcion</option>
@@ -172,6 +178,7 @@
                 </select>
             </div>
     
+            <!-- BOTONES -->
             <div class="botones" id="botones">
                 <div class="div-botones" id="div-botones">
                     <button class="botonStyle" id="btn-show-hide">Ocultar imagenes</button>

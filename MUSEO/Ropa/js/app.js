@@ -5,6 +5,23 @@ takenDown = false;
 
 /**
  * 
+ * DESCAGAR TRAJE
+ * 
+ */
+const btnDescargar = document.getElementById("btn-descargar");
+const divDescarga = document.getElementById("columna-percha");
+btnDescargar.onclick = function () {
+    let div = divDescarga;
+    html2canvas(div).then(function (canvas) {
+        var link = document.createElement('a');
+        link.download = 'filename.png';
+        link.href = canvas.toDataURL("image/jpeg", 1.0);
+        link.click();
+    })
+};
+
+/**
+ * 
  * MOSTRAR BOTON CAMBIO DE IMAGEN
  * 
  */
@@ -66,7 +83,7 @@ window.onload = function () {
     initDragElement();
 };
 
-// provincia = [targetTop, targetLeft, id, origenTop, origenLeft, zindex, rotation, posicion, estado]
+// piezaTraje = [targetTop, targetLeft, id, origenTop, origenLeft, zindex, rotation, posicion, estado]
 var image1 = [85, 595, 'draggeable-image-1', 440, 95, -1, 10, 'top', false];
 var image2 = [85, 595, 'draggeable-image-2', 330, 60, -4, -10, 'top', false];
 var image3 = [85, 595, 'draggeable-image-3', 215, 65, -7, 5, 'top', false];
@@ -138,6 +155,8 @@ function initDragElement() {
         elmnt.style.top = elmnt.offsetTop - pos2 + "px";
         elmnt.style.left = elmnt.offsetLeft - pos1 + "px";
 
+
+
         switch (elmnt.id) {
             case image1[2]:
             case image2[2]:
@@ -187,6 +206,7 @@ function initDragElement() {
             elmnt.style.left = imageDrag[1] + "px";
             elmnt.style.transform = 'rotate(0deg)';
             elmnt.style.zIndex = 90;
+            $("#"+elmnt.id).appendTo($("#columna-percha"));
         } else {
             relocate(imageDrag);
         }
@@ -200,13 +220,16 @@ function initDragElement() {
         elmnt.style.left = imageDrag[4] + "px";
         elmnt.style.zIndex = imageDrag[5];
         elmnt.style.transform = 'rotate(' + imageDrag[6] + 'deg)';
+        
 
         if (imageDrag[7] == 'top' && imageDrag[8]) {
             takenTop = false;
             imageDrag[8] = false;
+            $("#"+elmnt.id).appendTo($("#columna-cajon1"));
         } else if (imageDrag[7] == 'down' && imageDrag[8]) {
             takenDown = false;
             imageDrag[8] = false;
+            $("#"+elmnt.id).appendTo($("#columna-cajon2"));
         }
 
         if (imageDrag[7] == 'top') {

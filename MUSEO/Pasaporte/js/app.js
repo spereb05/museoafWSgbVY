@@ -59,13 +59,13 @@ btnShowHide.addEventListener("click", () => {
  * 
  */
 const btnDescargar = document.getElementById("btn-descargar");
-const divDescarga = document.getElementById("contenedor");
+const divDescarga = document.getElementById("rellenar-pasaporte");
 btnDescargar.onclick = function () {
-    let div = document.getElementById('rellenar-pasaporte');
+    let div = divDescarga;
     html2canvas(div).then(function (canvas) {
         var link = document.createElement('a');
         link.download = 'filename.png';
-        link.href = canvas.toDataURL("image/jpeg");
+        link.href = canvas.toDataURL("image/jpeg", 1.0);
         link.click();
     })
 };
