@@ -65,7 +65,7 @@ body {
     width: 125px;
     position: relative;
     margin: 10px;
-    opacity: 0.7;
+    opacity: 0.85;
 }
 
 .portada {
@@ -85,13 +85,15 @@ body {
 }
 
 .texto .portada {
-    background-color: blueviolet;
-    border-color: rgb(100, 34, 161);
+    background-color: white;
+    border-color: #047940;
+    color: #047940;
 }
 
 .respuesta .portada {
-    background-color: white;
-    border-color: rgb(168, 168, 168);
+    background-color: blue;
+    border-color: white;
+    color: white;
 }
 
 .imagen {
@@ -107,7 +109,7 @@ body {
 
 .sobre:hover {
     cursor: pointer;
-    box-shadow: 1px 1px 15px rgb(255, 255, 255);
+    box-shadow: 1px 1px 20px rgb(255, 255, 255);
     opacity: 1;
 }
 

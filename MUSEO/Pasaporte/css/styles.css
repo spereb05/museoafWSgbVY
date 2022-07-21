@@ -50,6 +50,10 @@ video {
     width: fit-content;
 }
 
+#imagenPasaporte {
+    height: 650px !important;
+}
+
 /**
  * BOTON
  */

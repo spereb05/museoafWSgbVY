@@ -2,7 +2,7 @@ var pareja1 = ["texto-moneda-mexico","peso"];
 var pareja2 = ["texto-moneda-espana","euro"];
 var pareja3 = ["texto-capital-mexico","ciudad-de-mexico"];
 var pareja4 = ["texto-capital-espana","madrid"];
-var pareja5 = ["texto-platos-mexico","tacos"];
+var pareja5 = ["texto-platos-mexico","comida-mexicana"];
 var pareja6 = ["texto-platos-leon","cocido"];
 var pareja7 = ["texto-habitantes-mexico","mapa-mundo-mexico"];
 var pareja8 = ["texto-habitantes-espana","mapa-mundo-espana"];
@@ -47,7 +47,7 @@ function select(id) {
                 document.getElementById("seleccion-inferior").style.borderRightColor = "rgb(88, 218, 88)";
                 document.getElementById("seleccion-inferior").style.borderTopColor = "rgb(88, 218, 88)";
 
-                setTimeout(descubrir, 1000);
+                setTimeout(descubrir, 2000);
                 done = true;
             } else if (arrayParejas[i][0] == pregunta && arrayParejas[i][1] != respuesta){
                 

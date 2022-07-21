@@ -1,7 +1,7 @@
 var margenError = 50;
 var pTop = 0, pLeft = 0;
-var takenTop = false;
-takenDown = false;
+var takenTop = false,
+    takenDown = false;
 
 /**
  * 
