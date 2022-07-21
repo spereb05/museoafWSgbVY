@@ -52,8 +52,6 @@ window.onload = function () {
     image22[2].click(dragElement(image22));
 };
 
-
-
 function loadImages() {
     for (var i = 0; i < 22; i++) {
         var newDiv = document.createElement("div");
