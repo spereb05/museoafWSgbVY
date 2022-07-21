@@ -220,8 +220,6 @@ function initDragElement() {
             relocate(elmnt, imageDrag);
         }
 
-        console.log(imageDrag[5] + " / " + imageDrag[7]);
-
         if (imageDrag[5] == imageDrag[7] == "right" && imageDrag[6]) {
             image1[6] = imageDrag[6];
         } else if (imageDrag[5] == imageDrag[7] == "left" && imageDrag[6]) {
@@ -265,10 +263,8 @@ function relocate(elmnt, imageDrag) {
 
 function colocacionBarriles() {
     if (image1[6] && image2[6] && image3[6]) {
-        console.log(image2[6] + "/" + image3[6] + "/" + image1[6]);
         colocacionCorrecta = true;
     } else {
-        console.log(image2[6] + "/" + image3[6] + "/" + image1[6]);
         colocacionCorrecta = false;
     }
 }
