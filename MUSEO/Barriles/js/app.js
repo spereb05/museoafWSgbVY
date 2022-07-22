@@ -18,10 +18,10 @@ var takenLeft = false,
 window.onload = function () {
     initDragElement();
 
-    // barriles = [targetTop, targetLeft, id, origenTop, origenLeft, posicion, target correcto, posicion]
-    image1 = [461, 561, 'draggeable-image-1', 450, 60, "right", false, null];
-    image2 = [461, 218, 'draggeable-image-2', 550, 20, "left", false, null];
-    image3 = [466, 384, 'draggeable-image-3', 560, 790, "middle", false, null];
+    // barriles = [id, origenTop, origenLeft, posicion, target correcto, posicion]
+    image1 = ['draggeable-image-1', 450, 60, "right", false, null];
+    image2 = ['draggeable-image-2', 550, 20, "left", false, null];
+    image3 = ['draggeable-image-3', 560, 790, "middle", false, null];
     arrayImages = [image1, image2, image3];
 };
 
@@ -124,7 +124,7 @@ function initDragElement() {
         var i = 0;
         var imageDrag = null;
         while (i < arrayImages.length && imageDrag == null) {
-            if (elmnt.id == arrayImages[i][2]) {
+            if (elmnt.id == arrayImages[i][0]) {
                 imageDrag = arrayImages[i];
             }
             i++;
@@ -138,21 +138,21 @@ function initDragElement() {
                 elmnt.style.top = targetLeft[0] + "px";
                 elmnt.style.left = targetLeft[1] + "px";
 
-                if (imageDrag[5] == "left") {
-                    imageDrag[6] = true;
+                if (imageDrag[3] == "left") {
+                    imageDrag[4] = true;
                 } else {
-                    imageDrag[6] = false;
+                    imageDrag[4] = false;
                 }
                 
-                if (imageDrag[7] == "left") {
+                if (imageDrag[5] == "left") {
                     takenLeft = false;
-                } else if (imageDrag[7] == "middle") {
+                } else if (imageDrag[5] == "middle") {
                     takenMiddle = false;
-                } else if (imageDrag[7] == "right") {
+                } else if (imageDrag[5] == "right") {
                     takenRight = false;
                 }
 
-                imageDrag[7] = "left";
+                imageDrag[5] = "left";
                 takenLeft = true;
             } else {
                 relocate(elmnt, imageDrag);
@@ -167,21 +167,21 @@ function initDragElement() {
                 elmnt.style.top = targetMiddle[0] + "px";
                 elmnt.style.left = targetMiddle[1] + "px";
 
-                if (imageDrag[5] == "middle") {
-                    imageDrag[6] = true;
+                if (imageDrag[3] == "middle") {
+                    imageDrag[4] = true;
                 } else {
-                    imageDrag[6] = false;
+                    imageDrag[4] = false;
                 }
                 
-                if (imageDrag[7] == "left") {
+                if (imageDrag[5] == "left") {
                     takenLeft = false;
-                } else if (imageDrag[7] == "middle") {
+                } else if (imageDrag[5] == "middle") {
                     takenMiddle = false;
-                } else if (imageDrag[7] == "right") {
+                } else if (imageDrag[5] == "right") {
                     takenRight = false;
                 }
 
-                imageDrag[7] = "middle";
+                imageDrag[5] = "middle";
                 takenMiddle = true;
             } else {
                 relocate(imageDrag, imageDrag);
@@ -196,36 +196,40 @@ function initDragElement() {
                 elmnt.style.top = targetRight[0] + "px";
                 elmnt.style.left = targetRight[1] + "px";
 
-                if (imageDrag[5] == "right") {
-                    imageDrag[6] = true;
+                if (imageDrag[3] == "right") {
+                    imageDrag[4] = true;
                 } else {
-                    imageDrag[6] = false;
+                    imageDrag[4] = false;
                 }
                 
-                if (imageDrag[7] == "left") {
+                if (imageDrag[5] == "left") {
                     takenLeft = false;
-                } else if (imageDrag[7] == "middle") {
+                } else if (imageDrag[5] == "middle") {
                     takenMiddle = false;
-                } else if (imageDrag[7] == "right") {
+                } else if (imageDrag[5] == "right") {
                     takenRight = false;
                 }
 
-                imageDrag[7] = "right";
+                imageDrag[5] = "right";
                 takenRight = true;
 
             } else {
                 relocate(elmnt, imageDrag);
             }
-        } else {
+        } 
+        /**
+         * Ninguna posicion correcta. El elemento vuelve a su posicion de origen
+         */
+        else {
             relocate(elmnt, imageDrag);
         }
 
-        if (imageDrag[5] == imageDrag[7] == "right" && imageDrag[6]) {
-            image1[6] = imageDrag[6];
-        } else if (imageDrag[5] == imageDrag[7] == "left" && imageDrag[6]) {
-            image2[6] = imageDrag[6];
-        } else if (imageDrag[5] == imageDrag[7] == "middle" && imageDrag[6]) {
-            image3[6] = imageDrag[6];
+        if (imageDrag[3] == imageDrag[5] == "right" && imageDrag[4]) {
+            image1[4] = imageDrag[4];
+        } else if (imageDrag[3] == imageDrag[5] == "left" && imageDrag[4]) {
+            image2[4] = imageDrag[4];
+        } else if (imageDrag[3] == imageDrag[5] == "middle" && imageDrag[4]) {
+            image3[4] = imageDrag[4];
         }
 
         /* stop moving when mouse button is released:*/
@@ -245,24 +249,24 @@ function initDragElement() {
 }
 
 function relocate(elmnt, imageDrag) {
-    elmnt.style.top = imageDrag[3] + "px";
-    elmnt.style.left = imageDrag[4] + "px";
+    elmnt.style.top = imageDrag[1] + "px";
+    elmnt.style.left = imageDrag[2] + "px";
     elmnt.style.zIndex = "";
 
-    if (imageDrag[7] == "left") {
+    if (imageDrag[5] == "left") {
         takenLeft = false;
-    } else if (imageDrag[7] == "middle") {
+    } else if (imageDrag[5] == "middle") {
         takenMiddle = false;
-    } else if (imageDrag[7] == "right") {
+    } else if (imageDrag[5] == "right") {
         takenRight = false;
     }
 
-    imageDrag[6] = false;
-    imageDrag[7] = null;
+    imageDrag[4] = false;
+    imageDrag[5] = null;
 }
 
 function colocacionBarriles() {
-    if (image1[6] && image2[6] && image3[6]) {
+    if (image1[4] && image2[4] && image3[4]) {
         colocacionCorrecta = true;
     } else {
         colocacionCorrecta = false;

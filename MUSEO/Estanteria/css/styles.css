@@ -1,0 +1,191 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+}
+
+.contenedor {
+    background-color: rgb(175, 25, 25);
+    border: solid;
+    border-color: rgb(175, 25, 25);
+    border-right-color: rgb(218, 88, 88);
+    border-top-color: rgb(218, 88, 88);
+    border-radius: 7px;
+    height: fit-content;
+    width: fit-content;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+    align-self: end;
+    
+    position: fixed;
+    top: 50%;
+    right: 50%;
+    -webkit-transform: translate(50%, -50%);
+    transform: translate(50%, -50%);
+
+    display: flex;
+}
+
+.panel {
+    margin: 15px 15px;
+    margin-bottom: 10px;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+}
+
+#imagenPanel {
+    height: 750px;
+    width: fit-content;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+}
+
+/**
+ * DRAGGEABLE
+ */
+.draggeable{
+    height: 70px;
+    width: fit-content;
+    position: absolute;
+    top: 205px;
+    left: 130px;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+}
+
+.draggeable-header {
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    z-index: 10;
+    color: #fff;
+    position: absolute;
+    cursor: grab;
+}
+
+#draggeable-image-1 {
+    top: 605px;
+    left: 400px;
+}
+
+#draggeable-image-2 {
+    top: 680px;
+    left: 70px;
+}
+
+#draggeable-image-3 {
+    top: 680px;
+    left: 120px;
+}
+
+#draggeable-image-4 {
+    top: 680px;
+    left: 170px;
+}
+
+#draggeable-image-5 {
+    top: 680px;
+    left: 220px;
+}
+
+#draggeable-image-6 {
+    top: 680px;
+    left: 270px;
+}
+
+#draggeable-image-7 {
+    top: 680px;
+    left: 330px;
+}
+
+#draggeable-image-8 {
+    top: 680px;
+    left: 370px;
+}
+
+#draggeable-image-9 {
+    top: 680px;
+    left: 420px;
+}
+
+#draggeable-image-10 {
+    top: 605px;
+    left: 90px;
+}
+
+#draggeable-image-11 {
+    top: 605px;
+    left: 140px;
+}
+
+#draggeable-image-12 {
+    top: 605px;
+    left: 190px;
+}
+
+#draggeable-image-13 {
+    top: 605px;
+    left: 240px;
+}
+
+#draggeable-image-14 {
+    top: 605px;
+    left: 290px;
+}
+
+#draggeable-image-15 {
+    top: 605px;
+    left: 340px;
+}
+
+#image-1,
+#image-2,
+#image-3,
+#image-4,
+#image-5,
+#image-6,
+#image-7,
+#image-8,
+#image-9,
+#image-10,
+#image-11,
+#image-12,
+#image-13,
+#image-14,
+#image-15 {
+    width: inherit;
+    height: 100%;
+}
+
+/**
+ * BOTON
+ */
+ .btn-inicio {
+    position: fixed;
+    right: 10px;
+    top: 315px;
+    z-index: 100;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.541);
+
+    background-image: linear-gradient(to top, #1e8052, #81cfa8);
+    border: solid;
+    padding: 9px;
+    display: inline-block;
+    margin: 20px;
+    cursor: pointer;
+    border-radius: 100%;
+    border-width: 4px;
+}
+
+.btn-inicio:hover {
+    background-image: linear-gradient(to right, #81cfa8, #1e8052);
+}
